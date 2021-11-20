@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+
+//main pages
 import './pages/home.dart';
 import './pages/stats.dart';
 import './pages/forecast.dart';
+
+//navbar and topbar
+import './core/navbar.dart'
+import './core/topbar.dart'
 
 void main() => runApp(App());
 
