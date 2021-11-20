@@ -8,7 +8,7 @@ import 'package:meditation/icons.dart';
 import 'package:meditation/widgets/discover_card.dart';
 import 'package:meditation/widgets/discover_small_card.dart';
 import 'package:meditation/widgets/svg_asset.dart';
-import 'package:meditation/widgets/resizable_box.dart';
+import 'package:meditation/widgets/discover_card.dart';
 import 'package:meditation/widgets/svg_asset.dart';
 
 class ExpenseScreen extends StatelessWidget{
@@ -46,66 +46,61 @@ class ExpenseScreen extends StatelessWidget{
 class TargetView extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Our Target", 
+    return Padding(
+      padding : EdgeInsets.only(left : 28.w, right: 28.w),
+      child : Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Our Target", 
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24.w
+            )
+          ),
+          SizedBox(height : 10.h),
+          DiscoverCard(
+            gradientStartColor : Color(0x78C5B3),
+            gradientEndColor   : Color(0x06B782),
+            width         : 320.w,
+            height        : 117.w,
+            title         : "Eur 79.67",
+            subtitle      : "Compared to last month"
+          )
+        ],
+      )
+    );
+  }
+}
+
+class Recommend extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 28.w,
+        right: 18.w,
+        top: 36.h,
+              
+      ),
+      child : Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Here is what you can do",
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 24.w
-          )
-        ),
-        SizedBox(height : 10.h),
-        ResizableBox(
-          borderRadius  : 26,
-          gradientStart : Color(0xFF78C5B3),
-          gradientEnd   : Color(0xFFFC67A7),
-          color         : Color(0x00000000),
-          width         : 320.w,
-          height        : 117.w,
-          child         : Stack(
-            children: [
-              SizedBox(
-                height: 320.w,
-                width: 117.w,
-                child: SvgAsset(
-                  height: 320.w,
-                  width : 117.w,
-                  assetName: AssetName.vectorSmallBottom
-                ),
-              ),
-              SizedBox(
-                height: 320.w,
-                width: 117.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Eur.79.67",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 48.w,
-                        color : Colors.white
-                      )
-                    ),
-                    SizedBox(height : 1.w),
-                    Text(
-                      "compared to last month",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24.w,
-                        color: Colors.white
-                      )
-                    )
-                  ]
-                )
-              )
-            ]
-          ),
-        )
-      ],
+            fontSize: 18.w
+          ),),
+          SizedBox(height: 15.h),
+          Text("1. Based on your habit, we recommend to reduce the amount of Dishwasher use from 4 times/week to 3 times/week",
+          softWrap: true,
+          style: TextStyle(fontSize: 16.w)),
+          SizedBox(height: 15.h),
+          Text("2. Reduce your average faucet use to 3 hours/day",
+          softWrap: true,
+          style: TextStyle(fontSize: 16.w))
+        ],
+      )
     );
   }
 }
@@ -190,7 +185,8 @@ class ProfilePage extends StatelessWidget {
             SizedBox(height : 30.h),
             ExpenseScreen(),
             SizedBox(height : 30.h),
-            TargetView()  
+            TargetView() ,            SizedBox(height : 30.h),
+            Recommend()
           ],
         ),
       ),
