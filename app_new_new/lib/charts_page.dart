@@ -124,28 +124,32 @@ class _ChartsPageState extends State<ChartsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       DiscoverSmallerCard(
+                        icon: Icon(Icons.water_outlined),
                         onTap: () {},
                         title: "Water",
-                        gradientStartColor: Color(0xff13DEA0),
-                        gradientEndColor: Color(0xff06B782),
+                        gradientStartColor: Color(0xff6DB49B),
+                        gradientEndColor: Color(0xffA7D794),
                       ),
                       DiscoverSmallerCard(
+                        icon: Icon(Icons.power),
                         onTap: () {},
                         title: "Power",
-                        gradientStartColor: Color(0xff13DEA0),
-                        gradientEndColor: Color(0xff06B782),
+                        gradientStartColor: Color(0xff1C2031),
+                        gradientEndColor: Color(0xff4F4F4F),
                       ),
                     ],
                   ),
                 )),
             Container(
+              padding: EdgeInsets.only(
+                  left: 28.w, right: 28.w, top: 0.w, bottom: 8.w),
               child: FittedBox(
                 fit: BoxFit.fill,
                 child: Image.asset('pics/graph.png'),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 28.w),
+              padding: EdgeInsets.only(left: 28.w, top: 12.w),
               child: Text(
                 "Today's Ranking",
                 style: TextStyle(
@@ -157,14 +161,18 @@ class _ChartsPageState extends State<ChartsPage> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
               child: DiscoverLongCard(
+                icon: Icon(
+                  Icons.people,
+                  size: 48,
+                ),
                 onTap: () {},
                 title: "TOP 10%\n#in your area",
-                gradientStartColor: Color(0xff13DEA0),
-                gradientEndColor: Color(0xff06B782),
+                gradientStartColor: Color(0xFFDDC74E),
+                gradientEndColor: Color(0xFF559EA2),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 28.w),
+              padding: EdgeInsets.only(left: 28.w, top: 12.w),
               child: Text(
                 "In-depth Analysis",
                 style: TextStyle(
@@ -176,6 +184,10 @@ class _ChartsPageState extends State<ChartsPage> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
               child: DiscoverLongCard(
+                icon: Icon(
+                  Icons.shower,
+                  size: 48,
+                ),
                 onTap: () {},
                 title: "Hydractive Shower\nSaved +5%",
                 gradientStartColor: Color(0xff13DEA0),
@@ -185,19 +197,27 @@ class _ChartsPageState extends State<ChartsPage> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
               child: DiscoverLongCard(
+                icon: Icon(
+                  Icons.wash,
+                  size: 48,
+                ),
                 onTap: () {},
                 title: "Optima Faucet\nSaved +10.2%",
-                gradientStartColor: Color(0xff13DEA0),
-                gradientEndColor: Color(0xff06B782),
+                gradientStartColor: Color(0xFFDDC74E),
+                gradientEndColor: Color(0xFF559EA2),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
               child: DiscoverLongCard(
+                icon: Icon(
+                  Icons.water_damage,
+                  size: 48,
+                ),
                 onTap: () {},
                 title: "Dishwasher\nSaved +25.8%",
-                gradientStartColor: Color(0xff13DEA0),
-                gradientEndColor: Color(0xff06B782),
+                gradientStartColor: Color(0xff525B81),
+                gradientEndColor: Color(0xff2E4E92),
               ),
             )
           ],
