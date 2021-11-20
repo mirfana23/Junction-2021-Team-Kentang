@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meditation/icons.dart';
 import 'package:meditation/widgets/svg_asset.dart';
 
-class DiscoverSmallCard extends StatelessWidget {
+class DiscoverLongCard extends StatelessWidget {
   final String? title;
   final String? subtitle;
   final Color? gradientStartColor;
@@ -16,7 +16,7 @@ class DiscoverSmallCard extends StatelessWidget {
   final double? borderRadius;
   final Widget? icon;
   final Function? onTap;
-  const DiscoverSmallCard(
+  const DiscoverLongCard(
       {Key? key,
       this.title,
       this.subtitle,
@@ -51,25 +51,25 @@ class DiscoverSmallCard extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: 125.w,
-              width: 150.w,
+              height: 100.w,
+              width: 300.w,
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: SizedBox(
-                height: 125.w,
-                width: 150.w,
+                height: 100.w,
+                width: 300.w,
                 child: Stack(
                   children: [
                     SizedBox(
-                      height: 125.w,
-                      width: 150.w,
+                      height: 100.w,
+                      width: 300.w,
                       child: SvgAsset(assetName: AssetName.vectorSmallBottom),
                     ),
                     SizedBox(
                       child: SvgAsset(
-                          height: 125.w,
-                          width: 150.w,
+                          height: 100.w,
+                          width: 300.w,
                           fit: BoxFit.fitHeight,
                           assetName: AssetName.vectorSmallTop),
                     ),
@@ -78,22 +78,22 @@ class DiscoverSmallCard extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 125.w,
-              width: 150.w,
+              height: 100.w,
+              width: 300.w,
               child: Padding(
                 padding: EdgeInsets.only(
-                    left: 20.w, right: 20.w, top: 20.w, bottom: 20.w),
+                    left: 10.w, right: 0.w, top: 10.w, bottom: 10.w),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SizedBox(
-                      width: 75.w,
+                      width: 150.w,
                       child: Text(
                         title!,
                         softWrap: true,
                         style: TextStyle(
-                            fontSize: 18.w,
+                            fontSize: 20.w,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),

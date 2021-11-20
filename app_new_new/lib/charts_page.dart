@@ -1,360 +1,218 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:meditation/detail_page.dart';
+import 'package:meditation/widgets/category_boxes.dart';
+import 'package:meditation/icons.dart';
+import 'package:meditation/widgets/discover_long_card.dart';
+import 'package:meditation/widgets/discover_small_card.dart';
+import 'package:meditation/widgets/discover_smaller_card.dart';
+import 'package:meditation/widgets/svg_asset.dart';
 
-class ChartsPage extends StatelessWidget {
-  const ChartsPage({Key? key}) : super(key: key);
+class ChartsPage extends StatefulWidget {
+  const ChartsPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
+  State<ChartsPage> createState() => _ChartsPageState();
+}
+
+class _ChartsPageState extends State<ChartsPage> {
+  @override
   Widget build(BuildContext context) {
-    return // Figma Flutter Generator OpencourseWidget - FRAME
-        Container(
-            width: 375,
-            height: 812,
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 1),
-            ),
-            child: Stack(children: <Widget>[
-              Positioned(
-                  top: 623,
-                  left: 28,
-                  child: Text(
-                    'Meditation is a practice where an individual uses a technique – such as mindfulness, or focusing their mind on a particular object, thought or activity – to train attention and awareness, and achieve a mentally clear and emotionally calm and stable state. Scholars have found meditation difficult to define, as practices vary both between traditions and within them.',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 0, 0, 1),
-                        fontFamily: 'SF Pro Text',
-                        fontSize: 16,
-                        letterSpacing: -0.40799999237060547,
-                        fontWeight: FontWeight.normal,
-                        height: 1.5625),
-                  )),
-              Positioned(
-                  top: 691,
-                  left: 0,
-                  child: Container(
-                      width: 375,
-                      height: 121,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment(
-                                -1.4054894847959076e-7, -1.2604166269302368),
-                            end: Alignment(
-                                1.2604166269302368, -1.8238448945551156e-15),
-                            colors: [
-                              Color.fromRGBO(234, 235, 240, 0.550000011920929),
-                              Color.fromRGBO(18, 20, 33, 0)
-                            ]),
-                      ))),
-              Positioned(
-                top: 778,
-                left: 0,
-                child: SizedBox(),
+    return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
+      body: SafeArea(
+        child: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                left: 28.w,
+                right: 18.w,
+                top: 36.h,
               ),
-              Positioned(
-                  top: 708,
-                  left: 28,
-                  child: Container(
-                      width: 319,
-                      height: 56,
-                      child: Stack(children: <Widget>[
-                        Positioned(
-                            top: 0,
-                            left: 0,
-                            child: Container(
-                                width: 319,
-                                height: 56,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(16),
-                                    topRight: Radius.circular(16),
-                                    bottomLeft: Radius.circular(16),
-                                    bottomRight: Radius.circular(16),
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Color.fromRGBO(
-                                            0, 0, 0, 0.20000000298023224),
-                                        offset: Offset(0, 4),
-                                        blurRadius: 10)
-                                  ],
-                                  color: Color.fromRGBO(23, 25, 37, 1),
-                                ))),
-                        Positioned(
-                            top: 17,
-                            left: 136,
-                            child: Text(
-                              'Start',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Color.fromRGBO(255, 255, 255, 1),
-                                  fontFamily: 'SF Pro Text',
-                                  fontSize: 17,
-                                  letterSpacing: -0.40799999237060547,
-                                  fontWeight: FontWeight.normal,
-                                  height: 1.2941176470588236),
-                            )),
-                      ]))),
-              Positioned(
-                  top: 599,
-                  left: 28,
-                  child: Container(
-                      width: 32,
-                      height: 2,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
-                          bottomLeft: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Image(
+                          image: AssetImage('pics/statistics.png'),
+                          width: 34.w,
+                          height: 34.w),
+                      SizedBox(height: 1.w),
+                      Ink(width: 34.w, height: 2.w, color: Color(0xFF0000FF))
+                    ],
+                  ),
+                  SizedBox(width: 10.w),
+                  Text("Analytics",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 34.w,
+                          fontWeight: FontWeight.bold)),
+                  InkWell(
+                    borderRadius: BorderRadius.circular(360),
+                    onTap: onSearchIconTapped,
+                    child: Container(
+                      height: 35.w,
+                      width: 35.w,
+                      child: Center(
+                        child: SvgAsset(
+                          assetName: AssetName.search,
+                          height: 24.w,
+                          width: 24.w,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromRGBO(
-                                  74, 128, 240, 0.20000000298023224),
-                              offset: Offset(0, 1),
-                              blurRadius: 4)
-                        ],
-                        color: Color.fromRGBO(23, 25, 37, 1),
-                      ))),
-              Positioned(
-                  top: 521,
-                  left: 28,
-                  child: Container(
-                      width: 128,
-                      height: 56,
-                      child: Stack(children: <Widget>[
-                        Positioned(
-                            top: 0,
-                            left: 0,
-                            child: Container(
-                                width: 56,
-                                height: 56,
-                                child: Stack(children: <Widget>[
-                                  Positioned(
-                                      top: 0,
-                                      left: 0,
-                                      child: Container(
-                                          width: 56,
-                                          height: 56,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(10),
-                                              topRight: Radius.circular(10),
-                                              bottomLeft: Radius.circular(10),
-                                              bottomRight: Radius.circular(10),
-                                            ),
-                                            color: Color.fromRGBO(234, 234, 240,
-                                                0.5299999713897705),
-                                          ))),
-                                  Positioned(
-                                      top: 14,
-                                      left: 14,
-                                      child: Container(
-                                          width: 28,
-                                          height: 28,
-                                          decoration: BoxDecoration(
-                                            color: Color.fromRGBO(
-                                                255, 255, 255, 1),
-                                          ),
-                                          child: Stack(children: <Widget>[
-                                            Positioned(
-                                                top: 0,
-                                                left: 0,
-                                                child: Container(
-                                                    width: 28,
-                                                    height: 28,
-                                                    child: Stack(
-                                                        children: <Widget>[
-                                                          Positioned(
-                                                            top: 0,
-                                                            left: 0,
-                                                            child: SizedBox(),
-                                                          ),
-                                                          Positioned(
-                                                            top: 3.5,
-                                                            left:
-                                                                2.3333334922790527,
-                                                            child: SizedBox(),
-                                                          ),
-                                                        ]))),
-                                          ]))),
-                                ]))),
-                        Positioned(
-                            top: 0,
-                            left: 72,
-                            child: Container(
-                                width: 56,
-                                height: 56,
-                                child: Stack(children: <Widget>[
-                                  Positioned(
-                                      top: 0,
-                                      left: 0,
-                                      child: Container(
-                                          width: 56,
-                                          height: 56,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(10),
-                                              topRight: Radius.circular(10),
-                                              bottomLeft: Radius.circular(10),
-                                              bottomRight: Radius.circular(10),
-                                            ),
-                                            color: Color.fromRGBO(234, 235, 240,
-                                                0.5299999713897705),
-                                          ))),
-                                  Positioned(
-                                      top: 14,
-                                      left: 14,
-                                      child: Container(
-                                          width: 28,
-                                          height: 28,
-                                          decoration: BoxDecoration(
-                                            color: Color.fromRGBO(
-                                                255, 255, 255, 1),
-                                          ),
-                                          child: Stack(children: <Widget>[
-                                            Positioned(
-                                                top: 0,
-                                                left: 0,
-                                                child: Container(
-                                                    width: 28,
-                                                    height: 28,
-                                                    child: Stack(
-                                                        children: <Widget>[
-                                                          Positioned(
-                                                            top: 0,
-                                                            left: 0,
-                                                            child: SizedBox(),
-                                                          ),
-                                                          Positioned(
-                                                            top:
-                                                                2.3333334922790527,
-                                                            left:
-                                                                2.3333334922790527,
-                                                            child: SizedBox(),
-                                                          ),
-                                                        ]))),
-                                          ]))),
-                                ]))),
-                      ]))),
-              Positioned(
-                  top: 210,
-                  left: 28,
-                  child: Container(
-                      width: 580,
-                      height: 279,
-                      child: Stack(children: <Widget>[
-                        Positioned(
-                            top: 0,
-                            left: 0,
-                            child: //Mask holder Template
-                                Container(
-                                    width: 280, height: 279, child: null)),
-                        Positioned(
-                            top: 0,
-                            left: 300,
-                            child: //Mask holder Template
-                                Container(
-                                    width: 280, height: 279, child: null)),
-                      ]))),
-              Positioned(
-                  top: 110,
-                  left: 28,
-                  child: Text(
-                    'Sleep Meditation',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 0, 0, 1),
-                        fontFamily: 'SF Pro Display',
-                        fontSize: 34,
-                        letterSpacing: 0.4099999964237213,
-                        fontWeight: FontWeight.normal,
-                        height: 1.2058823529411764),
-                  )),
-              Positioned(
-                  top: 161,
-                  left: 28,
-                  child: Text(
-                    'Best practice meditations',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 0, 0, 1),
-                        fontFamily: 'SF Pro Text',
-                        fontSize: 16,
-                        letterSpacing: -0.40799999237060547,
-                        fontWeight: FontWeight.normal,
-                        height: 1.5625),
-                  )),
-              Positioned(
-                  top: 64,
-                  left: 28,
-                  child: Container(
-                      width: 319,
-                      height: 24,
-                      child: Stack(children: <Widget>[
-                        Positioned(
-                            top: 0,
-                            left: 295,
-                            child: Container(
-                                width: 24,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                  color: Color.fromRGBO(255, 255, 255, 1),
-                                ),
-                                child: Stack(children: <Widget>[
-                                  Positioned(
-                                      top: 0,
-                                      left: 0,
-                                      child: Container(
-                                          width: 24,
-                                          height: 24,
-                                          child: Stack(children: <Widget>[
-                                            Positioned(
-                                              top: 0,
-                                              left: 0,
-                                              child: SizedBox(),
-                                            ),
-                                            Positioned(
-                                              top: 2.0621111392974854,
-                                              left: 1.2546707391738892,
-                                              child: SizedBox(),
-                                            ),
-                                          ]))),
-                                ]))),
-                        Positioned(
-                            top: 0,
-                            left: 0,
-                            child: Container(
-                                width: 24,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                  color: Color.fromRGBO(255, 255, 255, 1),
-                                ),
-                                child: Stack(children: <Widget>[
-                                  Positioned(
-                                      top: 0,
-                                      left: 0,
-                                      child: Container(
-                                          width: 24,
-                                          height: 24,
-                                          child: Stack(children: <Widget>[
-                                            Positioned(
-                                              top: 0,
-                                              left: 0,
-                                              child: SizedBox(),
-                                            ),
-                                            Positioned(
-                                              top: 4.2220001220703125,
-                                              left: 4,
-                                              child: SizedBox(),
-                                            ),
-                                          ]))),
-                                ]))),
-                      ]))),
-              Positioned(
-                top: 0,
-                left: 0,
-                child: SizedBox(),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ]));
+            ),
+            Container(
+                height: 120.h,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 25.w, right: 25.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CategoryBoxes(
+                        text: "Home",
+                        onPressed: (value) => print(value),
+                      ),
+                      CategoryBoxes(
+                        text: "Your Stats",
+                        onPressed: (value) => print(value),
+                      ),
+                      CategoryBoxes(
+                        text: "Forecast",
+                        onPressed: (value) => print(value),
+                      ),
+                    ],
+                  ),
+                )),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 28.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Recommended",
+                    style: TextStyle(
+                        color: Color(0xff515979),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14.w),
+                  ),
+                  GestureDetector(
+                      onTap: onSeeAllTapped,
+                      child: Text("See All",
+                          style: TextStyle(
+                              color: Color(0xff4A80F0),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.w)))
+                ],
+              ),
+            ),
+            Container(
+                height: 120.h,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 70.w, right: 70.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      DiscoverSmallerCard(
+                        onTap: () {},
+                        title: "Water",
+                        gradientStartColor: Color(0xff13DEA0),
+                        gradientEndColor: Color(0xff06B782),
+                      ),
+                      DiscoverSmallerCard(
+                        onTap: () {},
+                        title: "Power",
+                        gradientStartColor: Color(0xff13DEA0),
+                        gradientEndColor: Color(0xff06B782),
+                      ),
+                    ],
+                  ),
+                )),
+            Container(
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: Image.asset('pics/graph.png'),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 28.w),
+              child: Text(
+                "Today's Ranking",
+                style: TextStyle(
+                    color: Color(0xff515979),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14.w),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
+              child: DiscoverLongCard(
+                onTap: () {},
+                title: "TOP 10%\n#in your area",
+                gradientStartColor: Color(0xff13DEA0),
+                gradientEndColor: Color(0xff06B782),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 28.w),
+              child: Text(
+                "In-depth Analysis",
+                style: TextStyle(
+                    color: Color(0xff515979),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14.w),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
+              child: DiscoverLongCard(
+                onTap: () {},
+                title: "Hydractive Shower\nSaved +5%",
+                gradientStartColor: Color(0xff13DEA0),
+                gradientEndColor: Color(0xff06B782),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
+              child: DiscoverLongCard(
+                onTap: () {},
+                title: "Optima Faucet\nSaved +10.2%",
+                gradientStartColor: Color(0xff13DEA0),
+                gradientEndColor: Color(0xff06B782),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 12.h),
+              child: DiscoverLongCard(
+                onTap: () {},
+                title: "Dishwasher\nSaved +25.8%",
+                gradientStartColor: Color(0xff13DEA0),
+                gradientEndColor: Color(0xff06B782),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
+
+  void onSeeAllTapped() {}
+
+  void onSleepMeditationTapped() {
+    Get.to(() => DetailPage(), transition: Transition.rightToLeft);
+  }
+
+  void onDepressionHealingTapped() {}
+
+  void onSearchIconTapped() {}
 }
