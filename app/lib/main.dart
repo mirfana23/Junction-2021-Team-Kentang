@@ -51,6 +51,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(title: appTitle, initialRoute: '/', routes: routing);
+    return CupertinoApp(
+        title: appTitle, initialRoute: '/forecast', routes: routing);
   }
 }
