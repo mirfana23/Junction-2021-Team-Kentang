@@ -61,7 +61,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     listViews.add(
       TitleView(
-        titleTxt: 'Mediterranean diet',
+        titleTxt: 'Usage Overview',
         subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
@@ -250,7 +250,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  'My Diary',
+                                  'App Kentang',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: FitnessAppTheme.fontName,
@@ -262,7 +262,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            /*SizedBox(
                               height: 38,
                               width: 38,
                               child: InkWell(
@@ -322,7 +322,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                   ),
                                 ),
                               ),
-                            ),
+                            )*/SizedBox(),
                           ],
                         ),
                       )
