@@ -43,6 +43,6 @@ class ResizableBox extends StatelessWidget{
           )
         )
       ),
-    )
+    );
   }
 }
