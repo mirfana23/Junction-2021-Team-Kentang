@@ -59,8 +59,8 @@ class TargetView extends StatelessWidget{
           ),
           SizedBox(height : 10.h),
           DiscoverCard(
-            gradientStartColor : Color(0x78C5B3),
-            gradientEndColor   : Color(0x06B782),
+            gradientStartColor : Color(0xFF78C5B3),
+            gradientEndColor   : Color(0xFF06B782),
             width         : 320.w,
             height        : 117.w,
             title         : "Eur 79.67",
