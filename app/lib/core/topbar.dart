@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Topbar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox();
-  }
+CupertinoNavigationBar topbar(String title) {
+  return const CupertinoNavigationBar(
+    middle : Text("lol")
+  );
 }

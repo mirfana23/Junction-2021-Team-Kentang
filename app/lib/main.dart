@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 //main pages
 import './pages/home.dart';
@@ -13,17 +13,60 @@ void main() => runApp(App());
 
 class App extends StatelessWidget{
   final String appTitle   = "Kentang App";
-  final routing       = {
-    '/'         : (context) => const Home(),
-    '/stats'    : (context) => Stats(),
-    '/forecast' : (context) => Forecast()
+  final routing   = {
+    '/'   : (BuildContext context){
+      return CupertinoTabScaffold(
+        tabBar      : navbar(),
+        tabBuilder  : (BuildContext context, int index){
+          return CupertinoTabView(
+            builder : (BuildContext context){
+              return CupertinoPageScaffold(
+                navigationBar : topbar("Home"),
+                child         : Home()
+              );
+            }
+          );
+        } ,
+      );
+    },
+    '/stats'   : (BuildContext context){
+      return CupertinoTabScaffold(
+        tabBar      : navbar(),
+        tabBuilder  : (BuildContext context, int index){
+          return CupertinoTabView(
+            builder : (BuildContext context){
+              return CupertinoPageScaffold(
+                navigationBar : topbar("Stats"),
+                child         : Stats()
+              );
+            }
+          );
+        } ,
+      );
+    },
+    '/forecast'   : (BuildContext context){
+      return CupertinoTabScaffold(
+        tabBar      : navbar(),
+        tabBuilder  : (BuildContext context, int index){
+          return CupertinoTabView(
+            builder : (BuildContext context){
+              return CupertinoPageScaffold(
+                navigationBar : topbar("Forecast"),
+                child         : Forecast()
+              );
+            }
+          );
+        } ,
+      );
+    }
   };
+
   @override
   Widget build(BuildContext context){
-    return MaterialApp(
-      title         : this.appTitle, 
+    return CupertinoApp(
+      title         : appTitle, 
       initialRoute  : '/',
-      routes        : this.routing
+      routes        : routing
     );
   }
 }

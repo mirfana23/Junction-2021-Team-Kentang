@@ -1,8 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class Navbar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox();
-  }
+CupertinoTabBar navbar(){
+  List<BottomNavigationBarItem> tabBarItem = [
+    const BottomNavigationBarItem(
+      icon : Text("Forecast"),
+    ),
+    const BottomNavigationBarItem(
+      icon : Text("Home")
+    ),
+    const BottomNavigationBarItem(
+      icon : Text("Statistics")
+    )
+  ];
+  return CupertinoTabBar(
+    items : tabBarItem
+  );
 }
