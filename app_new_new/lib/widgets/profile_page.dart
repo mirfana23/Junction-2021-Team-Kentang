@@ -32,7 +32,7 @@ class ExpenseScreen extends StatelessWidget{
           )
         ),
         Text(
-          "Eur.79.67",
+          " € 79.67",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 48.w
@@ -63,7 +63,7 @@ class TargetView extends StatelessWidget{
             gradientEndColor   : Color(0xFF06B782),
             width         : 320.w,
             height        : 117.w,
-            title         : "Eur 79.67",
+            title         : "€ 4,83 ",
             subtitle      : "Compared to last month"
           )
         ],

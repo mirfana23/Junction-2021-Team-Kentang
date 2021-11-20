@@ -76,7 +76,7 @@ class DiscoverCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Hero(
                             tag: tag ?? '',
@@ -84,7 +84,7 @@ class DiscoverCard extends StatelessWidget {
                               color: Colors.transparent,
                               child: Text(
                                 title!,
-                                textAlign: TextAlign.left,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 22.w,
                                     fontWeight: FontWeight.normal,
@@ -108,22 +108,7 @@ class DiscoverCard extends StatelessWidget {
                               : Container(),
                         ],
                       ),
-                      Row(
-                        children: [
-                          SizedBox(width : 15.w),
-                          SvgAsset(
-                            assetName: AssetName.headphone,
-                            height: 24.w,
-                            width: 24.w,
-                          ),
-                          SizedBox(width: 24.w),
-                          SvgAsset(
-                            assetName: AssetName.tape,
-                            height: 24.w,
-                            width: 24.w,
-                          ),
-                        ],
-                      )
+                      
                     ],
                   ),
                 ),

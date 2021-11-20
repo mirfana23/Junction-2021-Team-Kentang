@@ -83,12 +83,18 @@ class DiscoverSmallCard extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(
                     left: 20.w, right: 20.w, top: 20.w, bottom: 20.w),
-                child: Row(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
+                    icon ??
+                    SvgAsset(
+                      assetName: AssetName.headphone,
+                      height: 24.w,
+                      width: 24.w,
+                    ),
                     SizedBox(
-                      width: 75.w,
+                      width: 150.w,
                       child: Text(
                         title!,
                         softWrap: true,
@@ -98,12 +104,6 @@ class DiscoverSmallCard extends StatelessWidget {
                             color: Colors.white),
                       ),
                     ),
-                    icon ??
-                        SvgAsset(
-                          assetName: AssetName.headphone,
-                          height: 24.w,
-                          width: 24.w,
-                        )
                   ],
                 ),
               ),
