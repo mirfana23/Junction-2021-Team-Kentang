@@ -1,3 +1,4 @@
+import 'package:app/core/topbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text('Sample Code'),
-        ),
+        navigationBar: topbar("lol"),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
