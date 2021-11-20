@@ -41,8 +41,8 @@ class DiscoverCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(26),
             gradient: LinearGradient(
               colors: [
-                gradientStartColor ?? Color(0xff441DFC),
-                gradientEndColor ?? Color(0xff4E81EB),
+                gradientStartColor ?? Color(0xFF441DFC),
+                gradientEndColor ?? Color(0xFF4E81EB),
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
