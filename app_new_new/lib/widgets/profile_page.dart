@@ -8,6 +8,107 @@ import 'package:meditation/icons.dart';
 import 'package:meditation/widgets/discover_card.dart';
 import 'package:meditation/widgets/discover_small_card.dart';
 import 'package:meditation/widgets/svg_asset.dart';
+import 'package:meditation/widgets/resizable_box.dart';
+import 'package:meditation/widgets/svg_asset.dart';
+
+class ExpenseScreen extends StatelessWidget{
+  @override 
+  Widget build(BuildContext build){
+    return Column(
+      children: [
+        Text(
+          "If you keep this up, ",
+          style: TextStyle(
+            fontSize: 24.w,
+            fontWeight: FontWeight.bold
+          )
+        ),
+        SizedBox(height : 20.h),
+        Text(
+          "Next Month's Expense : ",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize : 32.w
+          )
+        ),
+        Text(
+          "Eur.79.67",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 48.w
+          )
+        )
+      ]
+    );
+  }
+}
+
+class TargetView extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("Our Target", 
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24.w
+          )
+        ),
+        SizedBox(height : 10.h),
+        ResizableBox(
+          borderRadius  : 26,
+          gradientStart : Color(0xFF78C5B3),
+          gradientEnd   : Color(0xFFFC67A7),
+          color         : Color(0x00000000),
+          width         : 320.w,
+          height        : 117.w,
+          child         : Stack(
+            children: [
+              SizedBox(
+                height: 320.w,
+                width: 117.w,
+                child: SvgAsset(
+                  height: 320.w,
+                  width : 117.w,
+                  assetName: AssetName.vectorSmallBottom
+                ),
+              ),
+              SizedBox(
+                height: 320.w,
+                width: 117.w,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Eur.79.67",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 48.w,
+                        color : Colors.white
+                      )
+                    ),
+                    SizedBox(height : 1.w),
+                    Text(
+                      "compared to last month",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24.w,
+                        color: Colors.white
+                      )
+                    )
+                  ]
+                )
+              )
+            ]
+          ),
+        )
+      ],
+    );
+  }
+}
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -26,43 +127,42 @@ class ProfilePage extends StatelessWidget {
                 right: 18.w,
                 top: 36.h,
               ),
-              child: Row(
-                children: [
-                  Column(
+              child: Column(
+                crossAxisAlignment : CrossAxisAlignment.start,
+                children : [
+                  Row(
                     children: [
-                      Image(
-                        image : AssetImage('pics/Water.png'),
-                        width : 34.w,
-                        height: 34.w
+                      Column(
+                        crossAxisAlignment : CrossAxisAlignment.start,
+                        children: [
+                          Image(
+                            image : AssetImage('pics/Water.png'),
+                            width : 34.w,
+                            height: 34.w
+                          ),
+                          SizedBox(height : 1.w),
+                          Ink(width : 34.w, height: 2.w, color: Color(0xFF0000FF))
+                        ],
                       ),
-                      SizedBox(height : 1.w),
-                      Ink(width : 34.w, height: 2.w, color: Color(0xFF0000FF))
+                      SizedBox(width : 10.w),
+                      Text("Forecast",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 34.w,
+                            fontWeight: FontWeight.bold)
+                      ),
                     ],
                   ),
-                  SizedBox(width : 10.w),
-                  Text("Welcome!",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 34.w,
-                          fontWeight: FontWeight.bold)),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(360),
-                    onTap: onSearchIconTapped,
-                    child: Container(
-                      height: 35.w,
-                      width: 35.w,
-                      child: Center(
-                        child: SvgAsset(
-                          assetName: AssetName.search,
-                          height: 24.w,
-                          width: 24.w,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                  Text("Future expense due to water use",
+                    textAlign : TextAlign.left, 
+                    style : TextStyle(
+                      color    : Colors.black,
+                      fontSize : 12.w,
+                    )
+                  ),                
+                ]
+              )
             ),
             Container(
               height: 120.h,
@@ -87,105 +187,10 @@ class ProfilePage extends StatelessWidget {
                 ),
               )
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 28.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Recommended",
-                    style: TextStyle(
-                      color: Color(0xff515979),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14.w),
-                  ),
-                  GestureDetector(
-                    onTap: onSeeAllTapped,
-                    child: Text("See All",
-                      style: TextStyle(
-                        color: Color(0xff4A80F0),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.w
-                      )
-                    )
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            SizedBox(
-              height: 176.w,
-              child: ListView(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(width: 28.w),
-                  DiscoverCard(
-                    tag: "sleepMeditation",
-                    onTap: onSleepMeditationTapped,
-                    title: "Fun Fact",
-                    subtitle: "Without water, you will only have coffee beans to drink",
-                  ),
-                  SizedBox(width: 28.w),
-                ],
-              ),
-            ),
-            SizedBox(height: 28.h),
-            Padding(
-              padding: EdgeInsets.only(left: 28.w),
-              child: Text(
-                "Recent",
-                style: TextStyle(
-                    color: Color(0xff515979),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14.w),
-              ),
-            ),
-            SizedBox(height: 16.h),
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 28.w),
-              child: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 19.w, mainAxisExtent:  125.w, mainAxisSpacing: 19.w),
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                children: [
-                  DiscoverSmallCard(
-                    onTap: (){},
-                    title: "Water Usage",
-                    gradientStartColor: Color(0xff13DEA0),
-                    gradientEndColor: Color(0xff06B782),
-                  ),
-                  DiscoverSmallCard(
-                    onTap: (){},
-                    title: "Ways to save",
-                    gradientStartColor: Color(0xffFFD541),
-                    gradientEndColor: Color(0xffF0B31A),
-                  ),
-                  DiscoverSmallCard(
-                    onTap: (){},
-                    title: "Money Forecast",
-                    gradientStartColor: Color(0xffFC67A7),
-                    gradientEndColor: Color(0xffF6815B),
-                    icon:    SvgAsset(
-                      assetName: AssetName.tape,
-                      height: 24.w,
-                      width: 24.w,
-                    ),
-                  ),
-                  DiscoverSmallCard(
-                    onTap: (){},
-                    title: "Your ranking",
-                    icon:  SvgAsset(
-                      assetName: AssetName.tape,
-                      height: 24.w,
-                      width: 24.w,
-                    ),
-                  ),
-                ],
-
-              ),
-            )
+            SizedBox(height : 30.h),
+            ExpenseScreen(),
+            SizedBox(height : 30.h),
+            TargetView()  
           ],
         ),
       ),
