@@ -81,28 +81,29 @@ class DiscoverSmallCard extends StatelessWidget {
               height: 125.w,
               width: 150.w,
               child: Padding(
-                padding: EdgeInsets.only(left: 20.w, top: 20.w, bottom: 20.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                padding: EdgeInsets.only(left: 20.w, right:20.w, top: 20.w, bottom: 20.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      title!,
-                      style: TextStyle(
+                    SizedBox(
+                      width : 75.w,
+                      child : Text(
+                        title!,
+                        softWrap : true,
+                        style: TextStyle(
                           fontSize: 18.w,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.white
+                        ),
+                      ),
                     ),
-                    Row(
-                      children: [
-                        icon ??
-                            SvgAsset(
-                              assetName: AssetName.headphone,
-                              height: 24.w,
-                              width: 24.w,
-                            ),
-                      ],
-                    )
+                    icon ??
+                      SvgAsset(
+                        assetName: AssetName.headphone,
+                        height: 24.w,
+                        width: 24.w,
+                      )
                   ],
                 ),
               ),

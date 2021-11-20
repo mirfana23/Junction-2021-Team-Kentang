@@ -34,9 +34,21 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 top: 36.h,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Discover",
+                  Column(
+                    children: [
+                      Image(
+                        image : AssetImage('pics/Water.png'),
+                        width : 34.w,
+                        height: 34.w
+                      ),
+                      SizedBox(height : 1.w),
+                      Ink(width : 34.w, height: 2.w, color: Color(0xFF0000FF))
+                    ],
+                  ),
+                  SizedBox(width : 10.w),
+                  Text("Welcome!",
+                      textAlign: TextAlign.left,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 34.w,
@@ -61,31 +73,26 @@ class _DiscoverPageState extends State<DiscoverPage> {
             ),
             Container(
               height: 120.h,
-              child: ListView(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(
-                    width: 28.w,
-                  ),
-                  CategoryBoxes(
-                    text: "Insomnia",
-                    onPressed: (value) => print(value),
-                  ),
-                  CategoryBoxes(
-                    text: "Depression",
-                    onPressed: (value) => print(value),
-                  ),
-                  CategoryBoxes(
-                    text: "Baby Sleep",
-                    onPressed: (value) => print(value),
-                  ),
-                  CategoryBoxes(
-                    text: "Insomnia",
-                    onPressed: (value) => print(value),
-                  ),
-                ],
-              ),
+              child: Padding(
+                padding : EdgeInsets.only(left : 25.w, right : 25.w),
+                child   : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CategoryBoxes(
+                      text: "Home",
+                      onPressed: (value) => print(value),
+                    ),
+                    CategoryBoxes(
+                      text: "Your Stats",
+                      onPressed: (value) => print(value),
+                    ),
+                    CategoryBoxes(
+                      text: "Forecast",
+                      onPressed: (value) => print(value),
+                    ),
+                  ],
+                ),
+              )
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 28.w),
@@ -95,17 +102,20 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   Text(
                     "Recommended",
                     style: TextStyle(
-                        color: Color(0xff515979),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.w),
+                      color: Color(0xff515979),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14.w),
                   ),
                   GestureDetector(
-                      onTap: onSeeAllTapped,
-                      child: Text("See All",
-                          style: TextStyle(
-                              color: Color(0xff4A80F0),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.w)))
+                    onTap: onSeeAllTapped,
+                    child: Text("See All",
+                      style: TextStyle(
+                        color: Color(0xff4A80F0),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14.w
+                      )
+                    )
+                  )
                 ],
               ),
             ),
@@ -122,17 +132,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   DiscoverCard(
                     tag: "sleepMeditation",
                     onTap: onSleepMeditationTapped,
-                    title: "Sleep Meditation",
-                    subtitle: "7 Day Audio and Video Series",
+                    title: "Fun Fact",
+                    subtitle: "Without water, you will only have coffee beans to drink",
                   ),
-                  SizedBox(width: 20.w),
-                  DiscoverCard(
-                    onTap: onDepressionHealingTapped,
-                    title: "Depression Healing",
-                    subtitle: "10 Days Audio and Video Series",
-                    gradientStartColor: Color(0xffFC67A7),
-                    gradientEndColor: Color(0xffF6815B),
-                  ),
+                  SizedBox(width: 28.w),
                 ],
               ),
             ),
@@ -156,13 +159,19 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 children: [
                   DiscoverSmallCard(
                     onTap: (){},
-                    title: "Calming Sounds",
+                    title: "Water Usage",
                     gradientStartColor: Color(0xff13DEA0),
                     gradientEndColor: Color(0xff06B782),
                   ),
                   DiscoverSmallCard(
                     onTap: (){},
-                    title: "Insomnia",
+                    title: "Ways to save",
+                    gradientStartColor: Color(0xffFFD541),
+                    gradientEndColor: Color(0xffF0B31A),
+                  ),
+                  DiscoverSmallCard(
+                    onTap: (){},
+                    title: "Money Forecast",
                     gradientStartColor: Color(0xffFC67A7),
                     gradientEndColor: Color(0xffF6815B),
                     icon:    SvgAsset(
@@ -173,13 +182,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   ),
                   DiscoverSmallCard(
                     onTap: (){},
-                    title: "For Children",
-                    gradientStartColor: Color(0xffFFD541),
-                    gradientEndColor: Color(0xffF0B31A),
-                  ),
-                  DiscoverSmallCard(
-                    onTap: (){},
-                    title: "Tips For Sleeping",
+                    title: "Your ranking",
                     icon:  SvgAsset(
                       assetName: AssetName.tape,
                       height: 24.w,
