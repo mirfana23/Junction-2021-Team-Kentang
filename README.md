@@ -20,4 +20,5 @@ db.json as the main database file is first parsed with parse.py, creating the fo
 There are three tries corresponding to the mobile application made with flutter in the repository. `app` contains the foremost and simplest rendition of the app. `app_new` contains the second rendition of the application while `app_new_new` is the third and final rendition of the application. To run the application, make sure flutter 2.5.3 is installed in your computer and type `flutter run` inside any of the file folder. 
 
 ### Data Processing Results
-All data processing resutls are kept inside the folder `Forecast_code_and_result` and `Data.ipynb`. The former keeps the codes and datas required to run the machine learning algorithm to forecast. 
+All data processing resutls are kept inside the folder `Forecast_code_and_result` and `Data.ipynb`. The former keeps the codes and datas required to run the machine learning algorithm to forecast.    
+`Data.ipynb` conatins resources required to process the data
