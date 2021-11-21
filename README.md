@@ -1,5 +1,6 @@
 # Junction-2021-Team-Kentang
 This is our repository for Junction 2021 submission
+We introduce you to Aeer! Plan your Budget while Saving Water
 
 ## Description
 The repository contains all the files used in the creation of this project, starting from the parsed version of the JSON database up to the application used as a prototype. The folders of the repository are layouted as follows : 
