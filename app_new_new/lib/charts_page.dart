@@ -119,7 +119,7 @@ class _ChartsPageState extends State<ChartsPage> {
             Container(
                 height: 120.h,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 70.w, right: 70.w, top: 6.w),
+                  padding: EdgeInsets.only(left: 70.w, right: 70.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
