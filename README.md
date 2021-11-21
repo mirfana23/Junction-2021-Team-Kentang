@@ -23,3 +23,6 @@ There are three tries corresponding to the mobile application made with flutter 
 ### Data Processing Results
 All data processing resutls are kept inside the folder `Forecast_code_and_result` and `Data.ipynb`. The former keeps the codes and datas required to run the machine learning algorithm to forecast.    
 `Data.ipynb` conatins resources required to process the data
+
+### Visit our App
+http://54.243.163.198:10000
