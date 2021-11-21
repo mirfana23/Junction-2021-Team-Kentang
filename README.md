@@ -1,5 +1,5 @@
 # Junction-2021-Team-Kentang
-This is our repository for Junction 2021 submission
+This is our repository for Junction 2021 submission  
 We introduce you to Aeer! Plan your Budget while Saving Water
 
 ## Description
