@@ -93,7 +93,7 @@ class DiscoverSmallerCard extends StatelessWidget {
                         title!,
                         softWrap: true,
                         style: TextStyle(
-                            fontSize: 12.w,
+                            fontSize: 8.w,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
