@@ -40,7 +40,7 @@ class _ChartsPageState extends State<ChartsPage> {
                   Column(
                     children: [
                       Image(
-                          image: AssetImage('pics/statistics.png'),
+                          image: AssetImage('assets/pics/statistics.png'),
                           width: 34.w,
                           height: 34.w),
                       SizedBox(height: 1.w),
@@ -119,7 +119,7 @@ class _ChartsPageState extends State<ChartsPage> {
             Container(
                 height: 120.h,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 70.w, right: 70.w),
+                  padding: EdgeInsets.only(left: 70.w, right: 70.w, top: 6.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -142,10 +142,10 @@ class _ChartsPageState extends State<ChartsPage> {
                 )),
             Container(
               padding: EdgeInsets.only(
-                  left: 28.w, right: 28.w, top: 0.w, bottom: 8.w),
+                  left: 28.w, right: 28.w, top: 12.w, bottom: 8.w),
               child: FittedBox(
                 fit: BoxFit.fill,
-                child: Image.asset('pics/graph.png'),
+                child: Image.asset('assets/pics/graph.png'),
               ),
             ),
             Padding(
