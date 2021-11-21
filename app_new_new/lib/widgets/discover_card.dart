@@ -41,8 +41,8 @@ class DiscoverCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(26),
             gradient: LinearGradient(
               colors: [
-                gradientStartColor ?? Color(0xff441DFC),
-                gradientEndColor ?? Color(0xff4E81EB),
+                gradientStartColor ?? Color(0xFF441DFC),
+                gradientEndColor ?? Color(0xFF4E81EB),
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
@@ -50,7 +50,7 @@ class DiscoverCard extends StatelessWidget {
           ),
           child: Container(
             height: 176.w,
-            width: 305.w,
+            width: 320.w,
             child: Stack(
               children: [
                 vectorBottom ??
@@ -58,7 +58,7 @@ class DiscoverCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(26),
                       child: SvgAsset(
                           height: 176.w,
-                          width: 305.w,
+                          width: 320.w,
                           assetName: AssetName.vectorBottom),
                     ),
                 vectorTop ??
@@ -66,17 +66,17 @@ class DiscoverCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(26),
                       child: SvgAsset(
                           height: 176.w,
-                          width: 305.w,
+                          width: 320.w,
                           assetName: AssetName.vectorTop),
                     ),
                 Padding(
-                  padding: EdgeInsets.only(left: 24.w, top: 24.h, bottom: 24.h),
+                  padding: EdgeInsets.only(left:24.h, right:24.h, top: 24.h, bottom: 24.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Hero(
                             tag: tag ?? '',
@@ -84,19 +84,22 @@ class DiscoverCard extends StatelessWidget {
                               color: Colors.transparent,
                               child: Text(
                                 title!,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 22.w,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.normal,
+                                    fontStyle: FontStyle.italic,
                                     color: Colors.white),
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: 5.h,
+                            height: 10.h,
                           ),
                           subtitle != null
                               ? Text(
                                   subtitle!,
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       fontSize: 16.w,
                                       fontWeight: FontWeight.w300,
@@ -105,21 +108,7 @@ class DiscoverCard extends StatelessWidget {
                               : Container(),
                         ],
                       ),
-                      Row(
-                        children: [
-                          SvgAsset(
-                            assetName: AssetName.headphone,
-                            height: 24.w,
-                            width: 24.w,
-                          ),
-                          SizedBox(width: 24.w),
-                          SvgAsset(
-                            assetName: AssetName.tape,
-                            height: 24.w,
-                            width: 24.w,
-                          ),
-                        ],
-                      )
+                      
                     ],
                   ),
                 ),

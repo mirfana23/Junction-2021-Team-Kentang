@@ -35,7 +35,7 @@ class DiscoverSmallCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(20),
-      onTap:()=> onTap ?? () {},
+      onTap: () => onTap ?? () {},
       child: Ink(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -81,28 +81,29 @@ class DiscoverSmallCard extends StatelessWidget {
               height: 125.w,
               width: 150.w,
               child: Padding(
-                padding: EdgeInsets.only(left: 20.w, top: 20.w, bottom: 20.w),
+                padding: EdgeInsets.only(
+                    left: 20.w, right: 20.w, top: 20.w, bottom: 20.w),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      title!,
-                      style: TextStyle(
-                          fontSize: 18.w,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                    icon ??
+                    SvgAsset(
+                      assetName: AssetName.headphone,
+                      height: 24.w,
+                      width: 24.w,
                     ),
-                    Row(
-                      children: [
-                        icon ??
-                            SvgAsset(
-                              assetName: AssetName.headphone,
-                              height: 24.w,
-                              width: 24.w,
-                            ),
-                      ],
-                    )
+                    SizedBox(
+                      width: 150.w,
+                      child: Text(
+                        title!,
+                        softWrap: true,
+                        style: TextStyle(
+                            fontSize: 18.w,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
                   ],
                 ),
               ),
